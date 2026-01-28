@@ -1,19 +1,19 @@
 package com.zhishi.picture.service;
 
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zhishi.picture.model.dto.picture.*;
+import com.zhishi.picture.model.dto.picture.PictureQueryRequest;
+import com.zhishi.picture.model.dto.picture.PictureReviewRequest;
+import com.zhishi.picture.model.dto.picture.PictureUploadByBatchRequest;
+import com.zhishi.picture.model.dto.picture.PictureUploadRequest;
 import com.zhishi.picture.model.entity.Picture;
 import com.zhishi.picture.model.entity.User;
 import com.zhishi.picture.model.vo.PictureVO;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
- * @author 李鱼皮
  * @description 针对表【picture(图片)】的数据库操作Service
  * @createDate 2024-12-11 20:45:51
  */
@@ -29,7 +29,7 @@ public interface PictureService extends IService<Picture> {
     /**
      * 上传图片
      *
-     * @param inputSource          文件输入源
+     * @param inputSource 文件输入源
      * @param pictureUploadRequest
      * @param loginUser
      * @return
@@ -91,60 +91,4 @@ public interface PictureService extends IService<Picture> {
     Integer uploadPictureByBatch(PictureUploadByBatchRequest pictureUploadByBatchRequest,
                                  User loginUser);
 
-    /**
-     * 清理图片文件
-     *
-     * @param oldPicture
-     */
-    void clearPictureFile(Picture oldPicture);
-
-    /**
-     * 删除图片
-     *
-     * @param pictureId
-     * @param loginUser
-     */
-    void deletePicture(long pictureId, User loginUser);
-
-    /**
-     * 编辑图片
-     *
-     * @param pictureEditRequest
-     * @param loginUser
-     */
-    void editPicture(PictureEditRequest pictureEditRequest, User loginUser);
-
-    /**
-     * 校验空间图片的权限
-     *
-     * @param loginUser
-     * @param picture
-     */
-    void checkPictureAuth(User loginUser, Picture picture);
-
-    /**
-     * 根据颜色搜索图片
-     *
-     * @param spaceId
-     * @param picColor
-     * @param loginUser
-     * @return
-     */
-    List<PictureVO> searchPictureByColor(Long spaceId, String picColor, User loginUser);
-
-    /**
-     * 批量编辑图片
-     *
-     * @param pictureEditByBatchRequest
-     * @param loginUser
-     */
-    void editPictureByBatch(PictureEditByBatchRequest pictureEditByBatchRequest, User loginUser);
-
-//    /**
-//     * 创建扩图任务
-//     *
-//     * @param createPictureOutPaintingTaskRequest
-//     * @param loginUser
-//     */
-//    CreateOutPaintingTaskResponse createPictureOutPaintingTask(CreatePictureOutPaintingTaskRequest createPictureOutPaintingTaskRequest, User loginUser);
 }
