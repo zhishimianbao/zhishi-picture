@@ -3,7 +3,7 @@ package com.zhishi.picture.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhishi.picture.model.entity.User;
-import com.zhishi.picture.model.dto.user.UserQueryRequest;
+import com.zhishi.picture.model.user.UserQueryRequest;
 import com.zhishi.picture.model.vo.LoginUserVO;
 import com.zhishi.picture.model.vo.UserVO;
 

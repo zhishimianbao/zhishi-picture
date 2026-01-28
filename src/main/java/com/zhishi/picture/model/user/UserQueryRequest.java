@@ -1,4 +1,4 @@
-package com.zhishi.picture.model.dto.user;
+package com.zhishi.picture.model.user;
 
 
 import com.zhishi.picture.common.PageRequest;
