@@ -12,7 +12,7 @@ import com.zhishi.picture.exception.ErrorCode;
 import com.zhishi.picture.mapper.UserMapper;
 import com.zhishi.picture.model.entity.User;
 import com.zhishi.picture.model.enums.UserRoleEnum;
-import com.zhishi.picture.model.user.UserQueryRequest;
+import com.zhishi.picture.model.dto.user.UserQueryRequest;
 import com.zhishi.picture.model.vo.LoginUserVO;
 import com.zhishi.picture.model.vo.UserVO;
 import com.zhishi.picture.service.UserService;

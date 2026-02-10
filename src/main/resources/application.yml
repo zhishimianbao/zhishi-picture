@@ -2,6 +2,10 @@ server:
   port: 8123
   servlet:
     context-path: /api
+    # cookie 30 天过期
+    session:
+      cookie:
+        max-age: 2592000
 spring:
   application:
     name: zhishi-picture-backend
@@ -21,8 +25,10 @@ spring:
     timeout: 5000
   # Session 配置
   session:
-    store-type: none
-  # 开放更大的文件上传体积
+    store-type: redis
+    # session 30 天后过期
+    timeout: 2592000
+    # 开放更大的文件上传体积
   servlet:
     multipart:
       max-file-size: 10MB

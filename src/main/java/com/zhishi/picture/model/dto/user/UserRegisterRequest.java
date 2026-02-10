@@ -1,4 +1,4 @@
-package com.zhishi.picture.model.user;
+package com.zhishi.picture.model.dto.user;
 
 import lombok.Data;
 
